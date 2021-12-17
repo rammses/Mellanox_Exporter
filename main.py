@@ -2,7 +2,7 @@ from os import walk, path
 def get_log_files(_path):
     for root, dirs, files in walk(_path, topdown=False):
         for name in files:
-            if name[:-3] == '.log':
+            if name[-4:] == '.log':
                 print(root +"/"+ name)
 
 
