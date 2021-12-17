@@ -1,13 +1,18 @@
+from os import walk, path
+def get_log_files(_path):
+    for root, dirs, files in walk(_path, topdown=False):
+        for name in files:
+            if name[:-3] == '.log':
+                print(root +"/"+ name)
 
-def get_directories(path):
-    list_of_directories  = None
-    return list_of_directories
+
 
 
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print('PyCharm')
+    path = '/home/rammses/Belgeler/mellanox'
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    dirs = get_log_files(_path=path)
+    print(dirs)
